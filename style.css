@@ -11,7 +11,17 @@
 body {
     background-color:#f1e3e4;
     display: flex;
+    cursor: grab;
 }
+#cursor {
+    height: 30px;
+    width: 30px;
+    background: rgb(197, 86, 201);
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+}
+
 html {
     font-size: 90%;
     overflow-x: hidden;
@@ -21,21 +31,21 @@ html {
 /* HEADER  */
 header {
     height: 100%;
-    width: 350px;
-    background-color: #a288a6;
+    width: 300px;
+    /* background-color: #a288a6; */
+    background-color: #f1e3e4;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* z-index: 1000; */
     position: fixed;
     flex-flow: column;
     padding: 10px 20px 0px 0px;
     line-height: 3;
-    border: 3px solid white;
+    /* border: 3px solid black; */
 }
 
 header .name {
-    color: #ccbcbc;
+    color: white;
     font-size: 30px;
     text-decoration: none;
 }
@@ -43,25 +53,31 @@ header .name span {
     color: black;
 }
 
-.navbar a {
-    color: white;
-    display: block;
-    font-size: 30px;
-    text-decoration: none;
-    transition: .3s;
-}
-
-header .navbar a:hoover {
-    letter-spacing: 5px;
-    color:black;
-}
 .navbar {
     padding-bottom: 100px;
 }
+.navbar a {
+    color: black;
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 3s;
+}
+
+.navbar a:hoover {
+    letter-spacing: 10px;
+    color:black;
+}
+
 .navbar ul {
     list-style-type: none;
     font-size: 20px;
     font-family: 'Lexend';
+}
+
+.navbar a:hoover {
+    letter-spacing: 10px;
+    color:black;
 }
 
 /* MAIN  */
@@ -69,43 +85,56 @@ header .navbar a:hoover {
 .main {
     margin-left: 20%;
 }
-
+#mainpicture {
+    width: 100%;
+    position: relative;
+    /* source: https://img.freepik.com/free-vector/stream-binary-code-design_53876-97406.jpg  */
+}
 
 /* CONTAINER 1 */
 .container {
     color: #a288a6;
-    width: 1500px;
+    width: 100%;
     height: 950px;
     display: flex;
     margin-bottom: 200px;
     border: 3px solid black;
-    margin-top: 5px;
 }
+
 .content {
-    width: 800px;
+    width: 100%;
     font-size: 40px;
     line-height: .75;
     padding: 200px 0px 0px 200px;
+    position: absolute;
 }
+
+
 .content h1 {
-    color: black;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 7s forwards;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-20px);
+    }
 }
 .content h3 {
     font-size: 35px;
+    /* opacity: 0;
+    animation: fadeIn 1s forwards; */
 }
-.content p {
+
+    .content p {
     font-size: 30px;
+    /* opacity: 0;
+    animation: fadeIn 1s forwards; */
 }
-
-/* #profilepic {
-    color: #a288a6;
-    width: 475px;
-    height: 650px;
-    border-radius: 20%;
-    border: 5px solid black;
-    margin: 100px 30px 0px 10px;
-} */
-
 
 /* CONTAINER 2 */
 
